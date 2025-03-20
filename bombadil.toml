@@ -1,0 +1,12 @@
+dotfiles_dir = "dotfiles"
+
+[settings]
+prehooks = ["mkdir -p ~/.config/tmux", "rm -r ~/.config/fish"]
+posthooks = ["echo Done", "nvim --headless '+Lazy install' +qall"]
+
+[settings.dots]
+nvim = { source = "nvim", target = ".config/nvim" }
+awesome = { source = "awesome", target = ".config/awesome" }
+fish = { source = "fish", target = ".config/fish" }
+tmux_config = { source = "tmux/tmux.conf", target = "~/.tmux.conf" }
+tmux = { source = "tmux/theme", target = "~/.config/tmux/tmux-gruvbox" }
